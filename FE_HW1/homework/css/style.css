@@ -1,0 +1,407 @@
+ /*
+* Colors used in design.
+*   primary: #0078aa;
+*   dark: #363636;
+*   light: #fff;
+*/
+
+body {
+  font-family: 'Montserrat', sans-serif; 
+  padding-top: 60px; 
+} 
+ 
+/* header */
+.HeaderContent { 
+  top: 0;
+  position: fixed;
+  width: calc(100% - 20vw); 
+  left: 4vw; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+  background-color: white;
+  z-index: 1000;
+  margin-left: 6vw; 
+  margin-right: 6vw;
+}
+
+
+.HeaderContent .logo { 
+  width: auto;  
+}
+
+.HeaderContent ul {
+  list-style: none; 
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.HeaderContent ul li {
+  margin-left: 20px; 
+}
+
+.HeaderContent ul li a {
+  text-decoration: none;
+  color: black; 
+  font-size: 18px; 
+  transition: color 0.3s ease-in-out;
+}
+
+.HeaderContent ul li a:hover {
+  color: #007BFF; 
+}
+
+
+/*ProfesionalDevelopers*/
+
+.ProfesionalDevelopers {
+  background-image: url('/img/lady.jpg');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  width: 100%;
+  min-height: 100vh; 
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.ProfesionalDevelopers ul{
+  list-style: none; 
+  padding: 0;
+ }
+
+
+.text-container {
+  width: 50%; 
+  text-align: left; 
+}
+
+.text-container h1 {
+  font-size: 3vw;
+}
+
+.text-container p{
+  color:grey;
+}
+
+.text-container ul {
+  display:flex;
+
+}
+/*About Clinic  */ 
+
+.AboutClinicImg{  
+  background-image: url(/img/tools.png);
+  background-size:auto;
+  background-position: left;  
+  background-repeat: no-repeat;      
+}
+
+.AboutClinicText{
+  padding-top:60px; 
+  display: flex;
+  justify-content: right;  
+}
+
+.AboutClinicText h2{
+  font-size: 3vw; 
+}
+
+.AboutClinicText ul{
+  list-style: none; 
+}
+
+.ProffesionalCareText  {
+  color: #0078aa;
+}
+
+
+/* How We can Help You */
+.HowWeCanHelpYou {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  background-image: url(/img/services_bg.jpg);
+  background-size: cover;  
+  background-position: center;   
+  background-repeat: no-repeat;  
+  text-align: center;
+  
+  width: 100%;
+  min-height: 100vh;  
+
+
+  padding: 50px 0; 
+}
+
+.HowWeCanHelpYou h2, 
+.HowWeCanHelpYou p {
+  margin: 10px 0;   
+ }
+
+
+.HowWeCanHelpYou ul {
+  list-style: none; 
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  gap: 20px; 
+}
+
+.HowWeCanHelpYou ul li {
+  width: calc(33.33% - 20px); 
+  justify-content: center;
+}
+
+.HowWeCanHelpYou ul li div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  text-align: left; 
+  background-color: white;
+  padding: 20px;
+  width: 100%;
+}
+
+.HowWeCanHelpYou ul li img {  
+  margin-bottom: 10px; 
+  align-self: flex-start; 
+}
+
+/* OurSpeshialOffers */
+  
+.OurSpeshialOffers {
+  background-image: url(/img/pricing_bg.jpg); 
+  background-repeat: no-repeat;
+  background-size: cover;  
+  background-position: center;     
+  width: 100%;
+  min-height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.OurSpeshialOffersHeader {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.pricing-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center; 
+}
+
+.pricing-item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.pricing-card {
+  background: #069ddd;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  width: 100%;  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card.featured {
+  border: 3px solid #009bdd;
+  background: white;
+  color: #0078aa;
+  padding: 30px;
+}
+
+.pricing-details {
+  padding: 0;
+  margin: 10px 0;
+  list-style: none;
+}
+
+.pricing-details li {
+  margin-bottom: 5px;
+}
+
+
+/* ContactUs */
+.ContactUs {
+  background-image: url(/img/contact_image.jpg);
+  background-repeat: no-repeat;
+  background-position: left;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 500px;
+}
+
+.form-title,
+.form-subtitle {
+  color: #666; 
+  margin-bottom: 15px;
+}
+
+.form-title {
+  font-size: 28px;
+}
+
+.form-subtitle {
+  font-size: 16px;
+}
+
+.input-wrapper {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #666;
+}
+
+input::placeholder, select {
+  color: #666;
+}
+
+.underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #999;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 15px;
+  cursor: pointer;
+}
+
+select:focus {
+  outline: none;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+input[type="submit"] {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 12px 40px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  width: auto;  
+  min-width: 150px;
+  text-align: center;
+}
+
+input[type="submit"]:hover {
+  background-color: #fff;
+  color: #007BFF;
+  border: 2px solid #007BFF;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: white;
+  border: none;
+  color: #0078aa;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+ 
+
+button:hover {
+  background: #005f87;
+  color: white;
+} 
+
+a {
+  color: #000; 
+  text-decoration: none; 
+  transition: color 0.3s ease-in-out; 
+}
+
+a:hover {
+  color: #007BFF;  
+}
+
+
+.scrollToTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 15px 25px;
+  font-size: 30px;
+  cursor: pointer;
+  text-decoration: none;  
+}
+
+.scrollToTopBtn:hover {
+  background-color: #0056b3;
+}
+
+
+ 
+.container { 
+  width: 100%;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  box-sizing: border-box; 
+}
+  
+footer{ 
+  background-color: aqua;;  
+  display: flex;
+  justify-content: center; 
+  color: white; 
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+ 
+html {
+  scroll-behavior: smooth;
+}
+ 
+
+
