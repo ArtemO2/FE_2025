@@ -10,12 +10,11 @@
   <title>Responsive</title>
 </head>
 
-<body>
-  <!-- Your code here! Good luck! -->
+<body> 
   <header class="container" >
     <section class=" HeaderContent" >
       <div>
-          <a href="#Home"><img src="img/logo.png" alt="Logo"></a>
+          <a href="#Home"><img src="../img/logo.png" alt="Logo"></a>
       </div>
       <nav> 
         <ul>
@@ -35,15 +34,21 @@
 
     <section id="Home" class = "ProfesionalDevelopers" >
       <div  class="container  text-container" >
-        <h1>Proffesional Developers <br>Health Care</br> </h1>
+        <h1>Proffesional Developers <br>Health Care  </h1>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit.<br> 
           Lorem ipsum dolor sit amet consectetur.<br>Placeat!
-        </p>
-         
+        </p>  
+        <ul class="scg-pic conteiner">
+          <li class="svg-pic heart"></li>
+          <li class="svg-pic medkit"></li>
+          <li class="svg-pic stethoscope"></li>
+        </ul> 
+
       </div>
-    </section>
-<!------------------------------------------------------------------------------------->
+       
+    </section> 
+
     <section class="AboutClinicImg" id ="About" >   
       <div class="container  AboutClinicText">
         <ul>
@@ -53,24 +58,24 @@
           </li>
           
           <li> 
-            <h3> &#x27A1;&#xFE0F; Medical Consulting</h3>
+            <h3> Medical Consulting</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
               <br>Vestibulum a tempus quam. Nam eros. <br>
-              Quisque ac nisi eu nisl fermentum.</br></br>      
+              Quisque ac nisi eu nisl fermentum.       
             </p>
           </li>
           <li>
-            <h3> &#x27A1;&#xFE0F; Laboratory analysis</h3>
+            <h3> Laboratory analysis</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
               <br>Vestibulum a tempus quam. Nam eros. <br>
-              Quisque ac nisi eu nisl fermentum.</br></br>      
+              Quisque ac nisi eu nisl fermentum.       
             </p>
           </li>
           <li>
-            <h3> &#x27A1;&#xFE0F; Diagnostics</h3>
+            <h3> Diagnostics</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
             <br>Vestibulum a tempus quam. Nam eros. <br>
-            Quisque ac nisi eu nisl fermentum.</br></br>      
+            Quisque ac nisi eu nisl fermentum.     
             </p>
           </li>  
         </ul>
@@ -78,60 +83,58 @@
     </section>
 
     <section class="HowWeCanHelpYou" id = "Services" >
-      <div class="container">
-        <!-- <div class = "HowWeCanHelpYouHeader"> -->
+      <div class="container"> 
           <h2>How we can help you</h2>
-          <p>READ MORE ABOUT OUR SERVICES</p>
-        <!-- </div>  -->
+          <p>READ MORE ABOUT OUR SERVICES</p> 
         <ul>
           <li>
             <div class="Ophthalmology">
-            <img src = "/img/icons/oftalmology.jpg">
+            <img src = "../img/icons/oftalmology.jpg">
               <h3>Ophthalmology</h3>
               <p>Lorem ipsum dolor sit amet, consectetur<br> adipiscing elit. 
-              Nam venenatis scelerisque turpis,</br> quis placerat sem.</p> 
+              Nam venenatis scelerisque turpis, quis placerat sem.</p> 
             </div>
           </li>
 
           <li>
             <div class = "Dentistry">
-              <img src = "/img/icons/Dentistry.jpg">
+              <img src = "../img/icons/Dentistry.jpg">
               <h3>Dentistry</h3>
               <p>Lorem ipsum dolor sit amet, consectetur<br> adipiscing elit. 
-                Nam venenatis scelerisque turpis,</br> quis placerat sem.</p>
+                Nam venenatis scelerisque turpis, quis placerat sem.</p>
             </div>
           </li>
           <li>
             <div class = "Cardiology">
-              <img src = "/img/icons/Cardiology.jpg">
+              <img src = "../img/icons/Cardiology.jpg">
               <h3>Cardiology</h3>
               <p>Lorem ipsum dolor sit amet, consectetur<br> adipiscing elit. 
-                Nam venenatis scelerisque turpis,</br> quis placerat sem.</p>
+                Nam venenatis scelerisque turpis, quis placerat sem.</p>
             </div>
           </li>
 
           <li>
             <div class = "Pediatrics">
-              <img src = "/img/icons/Pediatrics.jpg">
+              <img src = "../img/icons/Pediatrics.jpg">
               <h3>Pediatrics</h3>
               <p>Lorem ipsum dolor sit amet, consectetur<br> adipiscing elit. 
-                Nam venenatis scelerisque turpis,</br> quis placerat sem.</p>
+                Nam venenatis scelerisque turpis, quis placerat sem.</p>
             </div>
           </li>
           <li>
             <div class = "Laboratory">
-              <img src = "/img/icons/Laboratory.jpg">
+              <img src = "../img/icons/Laboratory.jpg">
               <h3>Laboratory</h3>
               <p>Lorem ipsum dolor sit amet, consectetur<br> adipiscing elit. 
-                Nam venenatis scelerisque turpis,</br> quis placerat sem.</p>
+                Nam venenatis scelerisque turpis, quis placerat sem.</p>
             </div>
           </li>
           <li>
             <div class="Radiology">
-              <img src = "/img/icons/Radiology.jpg">
+              <img src = "../img/icons/Radiology.jpg">
               <h3>Radiology</h3>
               <p>Lorem ipsum dolor sit amet, consectetur<br> adipiscing elit. 
-                Nam venenatis scelerisque turpis,</br> quis placerat sem.</p>
+                Nam venenatis scelerisque turpis, quis placerat sem.</p>
             </div> 
           </li>
         </ul>  
@@ -206,8 +209,8 @@
     </section>
 
     <section class="ContactUs container" id="Contact">
-      <div> 
-        <div>
+      <div class="section-form"> 
+        <div >
           <h2>Make An Appointment</h2>
           <p>AND WE WILL CONTACT YOU</p>
           <form action="" method="get">
@@ -217,6 +220,11 @@
               <div class="underline"></div>
             </div>
     
+            <div class="input-wrapper">
+              <input type="email" placeholder="Email" name="email" id="email" required>
+              <div class="underline"></div>
+            </div>
+
             <div class="input-wrapper">
               <input type="tel" placeholder="Phone" name="phone" id="phone" required>
               <div class="underline"></div>

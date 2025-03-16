@@ -8,21 +8,25 @@
 body {
   font-family: 'Montserrat', sans-serif; 
   padding-top: 60px; 
+  margin: 0;
 } 
  
 /* header */
-.HeaderContent { 
-  top: 0;
-  position: fixed;
-  width: calc(100% - 20vw); 
-  left: 4vw; 
+
+header{
+  top:0;
+  position:fixed;
+  background: white;
+  margin: 0 auto;
+}
+
+.HeaderContent {  
+  width: calc(100% - 20vw);  
   display: flex;
   justify-content: space-between;
   align-items: center;  
-  background-color: white;
-  z-index: 1000;
-  margin-left: 6vw; 
-  margin-right: 6vw;
+  background-color: white; 
+  margin: 0 auto; 
 }
 
 
@@ -56,7 +60,7 @@ body {
 /*ProfesionalDevelopers*/
 
 .ProfesionalDevelopers {
-  background-image: url('/img/lady.jpg');
+  background-image: url('../img/lady.jpg');
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat; 
@@ -65,6 +69,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  line-height: 1.3;
 }
 
 .ProfesionalDevelopers ul{
@@ -80,6 +85,7 @@ body {
 
 .text-container h1 {
   font-size: 3vw;
+  line-height: 1.3;
 }
 
 .text-container p{
@@ -93,7 +99,7 @@ body {
 /*About Clinic  */ 
 
 .AboutClinicImg{  
-  background-image: url(/img/tools.png);
+  background-image: url("../img/tools.png");
   background-size:auto;
   background-position: left;  
   background-repeat: no-repeat;      
@@ -103,6 +109,12 @@ body {
   padding-top:60px; 
   display: flex;
   justify-content: right;  
+}
+
+.AboutClinicText h3::before{
+  content: '\21E8';
+  margin-right: 10px; 
+  color:#0078aa;
 }
 
 .AboutClinicText h2{
@@ -123,7 +135,7 @@ body {
   display: flex;
   flex-direction: column; 
   align-items: center; 
-  background-image: url(/img/services_bg.jpg);
+  background-image: url("../img/services_bg.jpg");
   background-size: cover;  
   background-position: center;   
   background-repeat: no-repeat;  
@@ -150,6 +162,7 @@ body {
   flex-wrap: wrap;
   justify-content: center; 
   gap: 20px; 
+  
 }
 
 .HowWeCanHelpYou ul li {
@@ -165,6 +178,7 @@ body {
   background-color: white;
   padding: 20px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .HowWeCanHelpYou ul li img {  
@@ -175,7 +189,7 @@ body {
 /* OurSpeshialOffers */
   
 .OurSpeshialOffers {
-  background-image: url(/img/pricing_bg.jpg); 
+  background-image: url("../img/pricing_bg.jpg"); 
   background-repeat: no-repeat;
   background-size: cover;  
   background-position: center;     
@@ -198,6 +212,7 @@ body {
   margin: 0;
   display: flex;
   justify-content: center; 
+
 }
 
 .pricing-item {
@@ -211,36 +226,39 @@ body {
   color: white;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  text-align: center;
-  width: 100%;  
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  align-items: center; 
+  width: 100%;    
+  justify-content: center;
+  
+  padding-top: 50px;
+  padding-bottom: 30px;
 }
 
 .pricing-card.featured {
-  border: 3px solid #009bdd;
+  border: 2px solid #009bdd;
   background: white;
-  color: #0078aa;
-  padding: 30px;
+  color: #0078aa; 
+  padding-top: 80px;
+  padding-bottom: 60px;   
+
+
+  
 }
 
 .pricing-details {
   padding: 0;
   margin: 10px 0;
+  border: #0056b3;
   list-style: none;
 }
-
-.pricing-details li {
-  margin-bottom: 5px;
-}
+ 
 
 
 /* ContactUs */
 .ContactUs {
-  background-image: url(/img/contact_image.jpg);
+  background-image: url("../img/contact_image.jpg");
   background-repeat: no-repeat;
-  background-position: left;
+  background-position-x: -130px ;
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -248,6 +266,11 @@ body {
   justify-content: flex-end;
   padding: 20px;
 }
+
+.section-form{
+  width: 50%;
+}
+
 
 .form-container {
   width: 100%;
@@ -325,27 +348,27 @@ input[type="submit"] {
   width: auto;  
   min-width: 150px;
   text-align: center;
+  border: 2px solid #007BFF;
 }
 
 input[type="submit"]:hover {
   background-color: #fff;
-  color: #007BFF;
-  border: 2px solid #007BFF;
+  color: #007BFF; 
 }
 
 button {
   margin-top: 10px;
   padding: 10px 20px;
   background: white;
-  border: none;
+  border: 2px solid #0056b3;
   color: #0078aa;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 10px;
   font-weight: bold;
   transition: all 0.3s ease-in-out;
+  
 }
  
-
 button:hover {
   background: #005f87;
   color: white;
@@ -361,7 +384,6 @@ a:hover {
   color: #007BFF;  
 }
 
-
 .scrollToTopBtn {
   position: fixed;
   bottom: 30px;
@@ -369,11 +391,16 @@ a:hover {
   background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 50%;
-  padding: 15px 25px;
+  border-radius: 50%; 
   font-size: 30px;
   cursor: pointer;
   text-decoration: none;  
+
+  width: 50px;
+  height: 50px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .scrollToTopBtn:hover {
@@ -381,6 +408,74 @@ a:hover {
 }
 
 
+.svg-pic {
+  display: flex;  
+  gap: 20px;  
+}
+
+.svg-pic {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 30px;
+  text-decoration: none;
+  gap: 20px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: background-color 0.3s, color 0.3s;  
+}
+
+.svg-pic.heart::before {
+  content: '\2764';  
+  font-size: 30px;
+  position: absolute;
+}
+
+.svg-pic.heart:hover {
+   color: #007bff;  
+}
+
+.svg-pic.medkit::before {
+  content: '\2695';  
+  font-size: 30px;
+  position: absolute;
+}
+
+.svg-pic.medkit:hover {
+   color: #007bff;  
+}
+
+.svg-pic.stethoscope::before {
+  content: '\271D';  
+  font-size: 30px;
+  position: absolute;
+}
+
+.svg-pic.stethoscope:hover {
+   color: #007bff;  
+}
+
+.svg-pic:hover {
+  background-color: white;   
+}
+
+.svg-pic:hover .heart::before {
+  color: #007bff;  
+}
+
+.svg-pic:hover .medkit::before {
+  color: #007bff; 
+}
+
+.svg-pic:hover .stethoscope::before {
+  color: #007bff;  
+}
+ 
  
 .container { 
   width: 100%;
@@ -390,7 +485,7 @@ a:hover {
 }
   
 footer{ 
-  background-color: aqua;;  
+  background-color: #363636;;  
   display: flex;
   justify-content: center; 
   color: white; 
