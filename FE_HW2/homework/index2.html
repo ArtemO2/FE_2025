@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AJAX</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+    <link rel="stylesheet" href="styles.css"> 
+
+  </head>
+
+  <body>
+    <section class="card-section">
+      <div class="card"> 
+        <div class="buttons">
+          <button class="edit">EDIT</button>
+          <button class="delete">DELETE</button>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Заголовок карточки</h2>
+          <h5 class="card-title__paragraph">  </h5>
+          <ul>
+            <li>
+              <div>
+                <h6>phone</h6>  
+                <p> </p>
+
+              </div>
+            </li>
+            <li>
+              <div> 
+                <h6>website</h6>
+                <p> </p>
+              </div>
+            </li>
+            <li>
+              <div> 
+                <h6>email</h6> 
+                <p> </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="sidebar" id="sidebar">
+        <form class="form">
+          <input type="text" id="fname" name="fname" value=" ">
+          <input type="text" id="fname" name="fname" value=" ">
+          <input type="text" id="fname" name="fname" value=" ">
+          <input type="text" id="fname" name="fname" value=" ">
+          <input type="text" id="fname" name="fname" value=" ">
+          <button type="button" onclick="document.getElementById('sidebar').classList.remove('active')">Save</button>
+        </form>
+      </div>
+    </section>
+    <script src="./js/index.js" > </script>
+  </body>
+</html>
