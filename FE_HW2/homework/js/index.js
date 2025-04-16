@@ -1,79 +1,150 @@
- 
-// Вот эта часть работает до того момента пока не подключаем данные с сервера
+let users = []; 
 
-// document.querySelector(".delete").addEventListener("click", function() {
-//     document.querySelector(".card").remove();
-//   });
-
-//   document.querySelector(".edit").addEventListener("click", function() {
-//     document.getElementById("sidebar").classList.toggle("active");
-//   });  
-
-//   document.querySelector("button[type='button']").addEventListener("click", function() {
-//     let sidebar = document.getElementById("sidebar");
-//     sidebar.classList.remove("active");
-//   });
-
-//   document.querySelector(".delete").addEventListener("click", function() {
-//     document.getElementById("sidebar").classList.remove("active");
-//   });
- 
+let currentEditingCard = null;
 
 
-
-
-
-  async function fetchUsers() {
-    try {
-      let response = await fetch("https://jsonplaceholder.typicode.com/users");
-      let users = await response.json();
-      renderUsers(users);
-    } catch (error) {
-      console.error("Ошибка загрузки пользователей:", error);
-    }
+async function fetchUsers() {
+  showSpinner();
+  try {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    users = await response.json();
+    renderUsers();
+  } catch (error) {
+    console.error("Ошибка загрузки пользователей:", error);
+  } finally {
+    hideSpinner();
   }
+}
   
-  function renderUsers(users) {
-    let section = document.querySelector(".card-section");
-    section.innerHTML = "";  
-  
-    users.forEach(user => {
-      let card = document.createElement("div");
+  function renderUsers( ) {
+    const section = document.querySelector(".card-section");
+    let cardList = document.createElement("ul");
+    section.appendChild(cardList);
+
+    users.forEach(user => {  
+      const {id, name, username, phone, website, email} = user;
+      let card = document.createElement("li");
       card.classList.add("card");
       card.innerHTML = `
         <div class="buttons">
-          <button class="edit" data-id="${user.id}">EDIT</button>
-          <button class="delete" data-id="${user.id}">DELETE</button>
+          <button class="edit" data-id="${id}">EDIT</button>
+          <button class="delete" data-id="${id}">DELETE</button>
         </div>
         <div class="card-body">
-          <h2 class="card-title">${user.name}</h2>
-          <h5 class="card-title__paragraph">${user.username}</h5>
+          <h2 class="card-title">${name}</h2>
+          <h5 class="card-title__paragraph">${username}</h5>
           <ul>
-            <li><div><h6>phone</h6><p>${user.phone}</p></div></li>
-            <li><div><h6>website</h6><p>${user.website}</p></div></li>
-            <li><div><h6>email</h6><p>${user.email}</p></div></li>
+            <li><h3>phone</h3><p>${phone}</p></li>
+            <li><h3>website</h3><p>${website}</p></li>
+            <li><h3>email</h3><p>${email}</p></li>
           </ul>
         </div>
       `;
-      section.appendChild(card);
-    });
-  
+      cardList.appendChild(card);
+    }); 
     attachEventListeners();
   }
   
   function attachEventListeners() {
     document.querySelectorAll(".delete").forEach(button => {
-      button.addEventListener("click", function () {
-        this.closest(".card").remove();
+      button.addEventListener("click", () => {
+        deleteUsers(button.dataset.id);
+        document.getElementById("sidebar").classList.remove("active");
       });
-    }); 
-  }
+    });
   
+    document.querySelectorAll(".edit").forEach(button => {
+      button.addEventListener("click", () => {
+        
+        const card = button.closest(".card");
+        currentEditingCard = card;  
+
+        document.getElementById("name").value = card.querySelector("h2").textContent;
+        document.getElementById("nickname").value = card.querySelector("h5").textContent;
+        document.getElementById("phone").value = card.querySelectorAll("p")[0].textContent;
+        document.getElementById("web-site").value = card.querySelectorAll("p")[1].textContent;
+        document.getElementById("email").value = card.querySelectorAll("p")[2].textContent;
+  
+        document.getElementById("sidebar").classList.add("active");
+      });
+    });
+  
+    document.querySelector(".form button").addEventListener("click", async function () {
+      const name = document.getElementById("name").value;
+      const nickname = document.getElementById("nickname").value;
+      const phone = document.getElementById("phone").value;
+      const website = document.getElementById("web-site").value;
+      const email = document.getElementById("email").value;
+    
+      if (currentEditingCard) {
+        showSpinner(); 
+    
+        currentEditingCard.querySelector("h2").textContent = name;
+        currentEditingCard.querySelector("h5").textContent = nickname;
+        currentEditingCard.querySelectorAll("p")[0].textContent = phone;
+        currentEditingCard.querySelectorAll("p")[1].textContent = website;
+        currentEditingCard.querySelectorAll("p")[2].textContent = email;
+    
+        hideSpinner();
+      }
+    
+      document.getElementById("sidebar").classList.remove("active");
+    });
+    
+      
+    document.querySelector("button[type='button']").addEventListener("click", function () {
+      document.getElementById("sidebar").classList.remove("active");
+    });
+  }
+   
+    document.querySelectorAll(".edit").forEach(button => {
+      button.addEventListener("click", () => {
+        document.getElementById("sidebar").classList.add("active"); 
+      });
+    });
+  
+    document.querySelector("button[type='button']").addEventListener("click", function() {
+      document.getElementById("sidebar").classList.remove("active");
+    });
+   
+    async function deleteUsers(id) {
+      showSpinner();
+      try {
+        const response = await fetch(
+          `https://jsonplaceholder.typicode.com/users/${id}`, 
+          { method: 'DELETE' }
+        );
+    
+        if (response.ok) {
+          users = users.filter(user => user.id != id);
+          const cardToDelete = document.querySelector(`.delete[data-id='${id}']`).closest(".card");
+          if (cardToDelete) {
+            cardToDelete.remove();
+          }
+          console.log(`Пользователь с id ${id} удалён`);
+        }
+      } catch (error) {
+        console.error("Ошибка удаления пользователя:", error);
+      } finally {
+        hideSpinner();
+      }
+    }
+    
+ 
+    // Show / Hide Spinner
+    function showSpinner() {
+      document.getElementById("spinner").classList.remove("hidden");
+    }
+    
+    function hideSpinner() {
+      document.getElementById("spinner").classList.add("hidden");
+    }
+    
+    
+
   fetchUsers();
   
- 
-
-
+  
 
 
  
