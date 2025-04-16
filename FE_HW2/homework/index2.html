@@ -9,49 +9,19 @@
 
   <body>
     <section class="card-section">
-      <div class="card"> 
-        <div class="buttons">
-          <button class="edit">EDIT</button>
-          <button class="delete">DELETE</button>
-        </div>
-        <div class="card-body">
-          <h2 class="card-title">Заголовок карточки</h2>
-          <h5 class="card-title__paragraph">  </h5>
-          <ul>
-            <li>
-              <div>
-                <h6>phone</h6>  
-                <p> </p>
-
-              </div>
-            </li>
-            <li>
-              <div> 
-                <h6>website</h6>
-                <p> </p>
-              </div>
-            </li>
-            <li>
-              <div> 
-                <h6>email</h6> 
-                <p> </p>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-      
       <div class="sidebar" id="sidebar">
         <form class="form">
-          <input type="text" id="fname" name="fname" value=" ">
-          <input type="text" id="fname" name="fname" value=" ">
-          <input type="text" id="fname" name="fname" value=" ">
-          <input type="text" id="fname" name="fname" value=" ">
-          <input type="text" id="fname" name="fname" value=" ">
-          <button type="button" onclick="document.getElementById('sidebar').classList.remove('active')">Save</button>
+          <input type="text" id="name" name="name" placeholder="name" value="sidebar-name ">
+          <input type="text" id="nickname" name="nickname" placeholder="nickname" value="sidebar-nickname ">
+          <input type="tel" id="phone" name="phone" placeholder="phone" value="sidebar-phone ">  <!--тут можна заморочиться и сделать ограничение только цифры-->
+          <input type="text" id="web-site" name="fname" placeholder="wed-site" value="sidebar-web-site ">
+          <input type="email" id="email" name="email" placeholder="email" value="sidebar-email ">
+          <button type="button" id="save-btn">Save</button>
         </form>
       </div>
     </section>
+    <div id="spinner" class="spinner hidden"></div>
+
     <script src="./js/index.js" > </script>
   </body>
 </html>
