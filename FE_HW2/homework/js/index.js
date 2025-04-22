@@ -77,19 +77,48 @@ async function fetchUsers() {
       const email = document.getElementById("email").value;
     
       if (currentEditingCard) {
-        showSpinner(); 
+        showSpinner();
     
-        currentEditingCard.querySelector("h2").textContent = name;
-        currentEditingCard.querySelector("h5").textContent = nickname;
-        currentEditingCard.querySelectorAll("p")[0].textContent = phone;
-        currentEditingCard.querySelectorAll("p")[1].textContent = website;
-        currentEditingCard.querySelectorAll("p")[2].textContent = email;
+        const userId = currentEditingCard.querySelector(".edit").dataset.id;
     
-        hideSpinner();
+        const updatedUser = {
+          id: userId,
+          name,
+          username: nickname,
+          phone,
+          website,
+          email
+        };
+    
+        try {
+          const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(updatedUser)
+          });
+    
+          if (!response.ok) throw new Error("Помилка оновлення користувача");
+    
+          const data = await response.json();
+     
+          currentEditingCard.querySelector("h2").textContent = data.name;
+          currentEditingCard.querySelector("h5").textContent = data.username;
+          currentEditingCard.querySelectorAll("p")[0].textContent = data.phone;
+          currentEditingCard.querySelectorAll("p")[1].textContent = data.website;
+          currentEditingCard.querySelectorAll("p")[2].textContent = data.email;
+    
+        } catch (error) {
+          console.error("Помилка оновлення користувача:", error);
+          alert("Не вдалося оновити дані. Спробуйте пізніше.");
+        } finally {
+          hideSpinner();
+          document.getElementById("sidebar").classList.remove("active");
+        }
       }
-    
-      document.getElementById("sidebar").classList.remove("active");
     });
+    
     
       
     document.querySelector("button[type='button']").addEventListener("click", function () {
